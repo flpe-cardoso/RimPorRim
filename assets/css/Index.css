@@ -1,0 +1,78 @@
+body {
+  background-color: #e9dcea;
+  overflow-x: hidden;
+}
+
+.Meio h1 {
+  font-size: 150px;
+  margin-bottom: 10px;
+  color: #282e34;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.Meio h2 {
+  font-size: 50px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  font-family: "Berkshire Swash", cursive;
+  color: #282e34;
+}
+
+.saiba-mais {
+  background-color: #653485;
+  color: white;
+  padding: 15px 25px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 50px;
+  width: 280px;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.button {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.tabelaMeio {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabelaMeio th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tabelaMeio,
+  .tabelaMeio tr,
+  .tabelaMeio th {
+    display: block;
+    width: 100%;
+  }
+
+  .logoIndex {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .escritaDRC h1 {
+    font-size: 80px;
+  }
+
+  .escritaDRC h2 {
+    font-size: 30px;
+  }
+}

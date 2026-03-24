@@ -1,0 +1,75 @@
+body {
+  background-color: #e9dcea;
+  overflow-x: hidden;
+}
+
+
+.Meio_escolha {
+  height: auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.titulo_escolha {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 50px;
+  color: black;
+}
+
+.container_botoes {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.texto_botao {
+  font-size: 45px;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.btn_infantil {
+  background-color: #ffd6cf;
+  color: black;
+  border: 5px solid #fca897;
+  height: 500px;
+  width: 300px;
+  border-radius: 30px;
+  padding-top: 200px;
+}
+
+.btn_infantil:hover {
+  background-color: #fca897;
+  color: white;
+}
+
+.btn_adulto {
+  background-color: #afcbff;
+  color: black;
+  border: 5px solid #8ab3ff;
+  height: 500px;
+  width: 300px;
+  border-radius: 30px;
+  padding-top: 200px;
+}
+
+.btn_adulto:hover {
+  background-color: #8ab3ff;
+  color: white;
+}
+
+.btn_profissional {
+  background-color: #8c759c;
+  color: black;
+  border: 5px solid #77568e;
+  height: 500px;
+  width: 300px;
+  border-radius: 30px;
+  padding-top: 200px;
+}
+
+.btn_profissional:hover {
+  background-color: #77568e;
+  color: white;
+}

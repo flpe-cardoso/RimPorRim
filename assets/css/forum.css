@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0ecf1ff;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+button.btn,
+.btn {
+  background: #653485;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.btn:hover,
+.btn:hover {
+  background: #653485;
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.post {
+  background: #fff;
+  border: 2px solid #e9dcea;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: 0.2s;
+}
+
+.post:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.post-header img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #653485;
+  object-fit: cover;
+}
+
+.post-header .nome {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+}
+
+.mensagem {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  margin-top: 8px;
+}
+
+.respostas {
+  margin-top: 15px;
+  padding-left: 15px;
+  border-left: 3px solid #eee;
+}
+
+.resposta {
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.caixa-resposta {
+  margin-top: 15px;
+}
+
+.caixa-resposta input[type="text"] {
+  width: calc(100% - 90px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 5px;
+}
+
+.caixa-resposta button {
+  padding: 5px 5px;
+  background: #653485;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.caixa-resposta button:hover {
+  background: #653485;
+}
+
+.botao-excluir {
+  color: #c0392b;
+  font-size: 13px;
+  font-weight: bold;
+  display: none;
+  cursor: pointer;
+}
+
+.post.show-delete .botao-excluir {
+  display: inline;
+}

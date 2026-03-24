@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #dce7fb 80%, #ffffff 100%);
+}
+
+.navbar {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px, 20px;
+  border-bottom: 1px solid #ddd;
+  height: 60px;
+}
+
+.navbar .logo {
+  margin-left: 0;
+  display: inline-block;
+  padding: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.navbar .img_navbar {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar h3 {
+  position: relative;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  font-family: Droid Sans;
+}
+
+.nav-links a {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  justify-content: center;
+  flex: 1;
+}
+
+.img_pessoa {
+  height: 15px;
+  width: 15px;
+}
+
+.botoes a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 7px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.botoes .entrar {
+  background-color: #96e2b3;
+}
+
+.botoes .cadastrar {
+  background-color: #96e2b3;
+}
+
+.container {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.lado-esquerdo {
+  flex: 1;
+  background-color: #96e2b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.lado-esquerdo h2 {
+  color: #033d1e;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Berkshire Swash", cursive;
+}
+
+.lado-esquerdo p {
+  color: #033d1e;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lado-esquerdo button {
+  background-color: #aaf3d0;
+  border: 2px solid #38a36b;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #033d1e;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.lado-esquerdo button:hover {
+  background-color: #8adfb6;
+}
+
+.lado-direito {
+  flex: 1;
+  background-color: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lado-direito form {
+  display: flex;
+  flex-direction: column;
+}
+
+.lado-direito h1 {
+  color: #033d1e;
+  margin-bottom: 20px;
+  font-family: "Berkshire Swash", cursive;
+  text-align: center;
+}
+
+.lado-direito label {
+  margin: 5px 0 3px 0;
+  color: #033d1e;
+  font-weight: bold;
+}
+
+.lado-direito input[type="text"],
+.lado-direito input[type="email"],
+.lado-direito input[type="password"] {
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d6fadd;
+  outline: none;
+  transition: 0.3s;
+}
+
+.lado-direito input[type="text"]:focus,
+.lado-direito input[type="email"]:focus,
+.lado-direito input[type="password"]:focus {
+  background-color: #c0f0ce;
+}
+
+.lado-direito input[type="radio"] {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.lado-direito button {
+  background-color: #96e2b3;
+  border: 2px solid #38a36b;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #033d1e;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.lado-direito button:hover {
+  background-color: #8adfb6;
+}
+
+.lado-direito p {
+  margin: 15px 0 5px 0;
+  color: #033d1e;
+  font-weight: bold;
+  text-align: center;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.social img {
+  width: 35px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.social img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .lado-esquerdo,
+  .lado-direito {
+    width: 100%;
+    padding: 30px;
+  }
+}

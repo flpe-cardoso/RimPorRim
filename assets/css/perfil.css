@@ -1,0 +1,140 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e2e2e2 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+h1 {
+  color: #653485;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.info {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-pic {
+  margin: 25px 0;
+}
+
+.profile-pic img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 5px solid #653485;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #653485;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #45235cff;
+  transform: scale(1.05);
+}
+
+button {
+  background: #653485;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #45235cff;
+  transform: scale(1.05);
+}
+
+.links {
+  margin-top: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #653485;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #45235cff;
+}
+
+.mensagem {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.post.show-delete::after {
+  content: "🗑️ Clique para excluir";
+  display: block;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 6px;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+#posts-container .post {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+#posts-container .post:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
