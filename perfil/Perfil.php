@@ -17,6 +17,18 @@ $email = $_SESSION['email'];
 $tipo = $_SESSION['tipo'];
 $fotoPerfil = $_SESSION['foto_perfil'] ?? "../uploads/default.png";
 
+// Buscar a ofensiva atual
+$sql = "SELECT ofensiva FROM usuarios WHERE usuario_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$ofensiva = 0;
+if ($row = $result->fetch_assoc()) {
+    $ofensiva = $row['ofensiva'] ?? 0;
+}
+$stmt->close();
+
 // Cria pasta uploads se não existir
 $diretorio = "../uploads/";
 if (!is_dir($diretorio))
@@ -27,21 +39,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto'])) {
     $arquivo = $_FILES['foto'];
     if ($arquivo['error'] == 0) {
         $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
-        $novoNome = $usuario_id . "." . $extensao;
-        $caminho = $diretorio . $novoNome;
-
-        if (move_uploaded_file($arquivo['tmp_name'], $caminho)) {
-            $sql = "UPDATE usuarios SET foto_perfil = ? WHERE usuario_id = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("si", $caminho, $usuario_id);
-            $stmt->execute();
-            $stmt->close();
-
-            $_SESSION['foto_perfil'] = $caminho;
-            $fotoPerfil = $caminho;
-            $mensagem = "Foto de perfil atualizada!";
+        $permitidas = ['jpg', 'jpeg', 'png', 'gif'];
+        
+        if (!in_array($extensao, $permitidas)) {
+            $mensagem = "Erro: Apenas imagens são permitidas.";
         } else {
-            $mensagem = "Erro ao mover o arquivo.";
+            $novoNome = $usuario_id . "." . $extensao;
+            $caminho = $diretorio . $novoNome;
+
+            if (move_uploaded_file($arquivo['tmp_name'], $caminho)) {
+                $sql = "UPDATE usuarios SET foto_perfil = ? WHERE usuario_id = ?";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("si", $caminho, $usuario_id);
+                $stmt->execute();
+                $stmt->close();
+
+                $_SESSION['foto_perfil'] = $caminho;
+                $fotoPerfil = $caminho;
+                $mensagem = "Foto de perfil atualizada!";
+            } else {
+                $mensagem = "Erro ao mover o arquivo.";
+            }
         }
     } else {
         $mensagem = "Erro no upload.";
@@ -64,6 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['foto'])) {
     <div class="container">
         <h1>Bem-vindo, <?= htmlspecialchars($nome) ?>!</h1>
         <div class="info">Email: <?= htmlspecialchars($email) ?></div>
+        
+        <div class="ofensiva-container" style="margin: 15px 0; background: #fff5e6; padding: 10px; border-radius: 8px; border: 1px solid #ffe0b2; color: #e65100; font-weight: bold; font-size: 1.2rem; display: inline-block;">
+            🔥 Ofensiva Diária: <?= $ofensiva ?> dia(s)
+        </div>
 
         <form method="POST" enctype="multipart/form-data">
             <div class="profile-pic">

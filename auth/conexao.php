@@ -1,11 +1,8 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
-$senha = ""; 
-$dbname = "chat_drc"; 
+include_once(__DIR__ . '/../config.php');
 
 // Criar conexão
-$conn = new mysqli($servidor, $usuario, $senha, $dbname);
+$conn = new mysqli($db_servidor, $db_usuario, $db_senha, $db_nome);
 
 // Verificar conexão
 if ($conn->connect_error) {

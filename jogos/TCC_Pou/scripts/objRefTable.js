@@ -11,6 +11,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio,
 		C3.Plugins.Mouse,
 		C3.Plugins.Touch,
+		C3.Plugins.AJAX,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Acts.SetAnim,
@@ -26,12 +27,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.Mouse.Cnds.OnObjectClicked,
 		C3.Plugins.System.Acts.GoToLayout,
-		C3.Plugins.Touch.Cnds.OnTapGestureObject,
-		C3.Plugins.Sprite.Acts.SetVisible,
-		C3.Plugins.Sprite.Acts.SetAnimSpeed,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Text.Acts.SetVisible,
+		C3.Plugins.AJAX.Acts.SetHeader,
+		C3.Plugins.AJAX.Acts.Post,
+		C3.Plugins.AJAX.Acts.Request,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Sprite.Acts.SubInstanceVar,
@@ -73,6 +75,7 @@ self.C3_JsPropNameTable = [
 	{Toque: 0},
 	{Seta_esquerda: 0},
 	{seta_direita: 0},
+	{AJAX: 0},
 	{Faltas: 0},
 	{Pontos: 0}
 ];
@@ -100,5 +103,6 @@ self.InstanceType = {
 	Fundo2: class extends self.ISpriteInstance {},
 	Toque: class extends self.IInstance {},
 	Seta_esquerda: class extends self.ISpriteInstance {},
-	seta_direita: class extends self.ISpriteInstance {}
+	seta_direita: class extends self.ISpriteInstance {},
+	AJAX: class extends self.IInstance {}
 }

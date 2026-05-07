@@ -10,7 +10,7 @@ if(strtolower($_SESSION['tipo']) !== 'profissional') {
     die("Apenas profissionais podem responder postagens.");
 }
 
-include('../auth//conexao.php');
+include('../auth/conexao.php');
 
 $usuario_id = $_SESSION['usuario_id'];
 

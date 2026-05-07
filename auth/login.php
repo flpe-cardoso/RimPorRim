@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $usuario = $resultado->fetch_assoc();
 
         if (password_verify($senha, $usuario['senha'])) {
+            session_regenerate_id(true);
             // 🔹 Salva dados do usuário em variáveis individuais na sessão
             $_SESSION['usuario_id']  = $usuario['usuario_id'];
             $_SESSION['nome']        = $usuario['nome'];
@@ -25,10 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['foto_perfil'] = $usuario['foto_perfil']; // pode ser NULL
 
             // Corrige o caminho de redirecionamento
-            $destino = $_SESSION['ultima_pagina'] ?? $_SERVER['HTTP_REFERER'] ?? '/tcc/rimporrim/index.php';
-            if (preg_match('/login\.php|login\.html/i', $destino)) {
-                $destino = '/tcc/public/index.php';
-            }
+            $destino = $_SESSION['ultima_pagina'] ?? '../public/index.php';
             unset($_SESSION['ultima_pagina']);
             
             header("Location: $destino");

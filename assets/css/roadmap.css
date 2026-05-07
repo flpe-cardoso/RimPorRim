@@ -1,0 +1,313 @@
+/* =============================================================================
+   2. Scrollbar
+============================================================================= */
+
+.trail-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.trail-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* =============================================================================
+   3. Animações
+============================================================================= */
+
+@keyframes trail-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =============================================================================
+   4. Layout raiz
+============================================================================= */
+
+.trail-app {
+  min-height: 100vh;
+  background: #f5f3ee;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+/* =============================================================================
+   Header
+============================================================================= */
+
+.trail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #f0ede8;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+/* =============================================================================
+   Botão Voltar
+============================================================================= */
+
+.trail-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  color: #7a7570;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.trail-back-btn:hover {
+  background: #f5f3ee;
+  transform: translateY(-1px);
+}
+
+
+/* =============================================================================
+   Título
+============================================================================= */
+
+.trail-title {
+  font-family: "Berkshire Swash", cursive;
+  font-size: clamp(17px, 3vw, 25px);
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.trail-title__dark {
+  color: #1c1917;
+}
+
+.trail-title__orange {
+  color: #f97316;
+}
+
+
+/* =============================================================================
+   Badge de progresso
+============================================================================= */
+
+.trail-flame-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 15px;
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(249,115,22,0.12);
+}
+
+.trail-flame-badge__count {
+  font-family: "Berkshire Swash", cursive;
+  font-size: 18px;
+  color: #f97316;
+}
+
+
+/* =============================================================================
+   Barra de progresso
+============================================================================= */
+
+.trail-progress-wrapper {
+  padding: 6px 28px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.trail-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.trail-progress-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #b5b0a8;
+}
+
+.trail-progress-label--pct {
+  color: #f97316;
+}
+
+.trail-progress-track {
+  height: 7px;
+  background: #f5f3ee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.trail-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fdba74, #f97316);
+  border-radius: 8px;
+  transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* =============================================================================
+   Scroll
+============================================================================= */
+
+.trail-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
+  padding: 24px 0 32px;
+}
+
+.trail-scroll:active {
+  cursor: grabbing;
+}
+
+.trail-inner {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.trail-path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+
+/* =============================================================================
+   Cards
+============================================================================= */
+
+.step-card {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+
+  cursor: pointer;
+  user-select: none;
+
+  background: #ffffff;
+  border: 2px solid #ede9e3;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  animation: trail-fade-in 0.3s ease both;
+}
+
+.step-card:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.step-card[data-done="true"] {
+  background: linear-gradient(145deg, #fb923c, #ef6c00);
+  border: none;
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+}
+
+.step-card[data-done="true"]:hover {
+  box-shadow: 0 14px 32px rgba(249, 115, 22, 0.45);
+}
+
+
+/* =============================================================================
+   Check
+============================================================================= */
+
+.step-card__check {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #16a34a;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.35);
+}
+
+
+/* =============================================================================
+   Conteúdo interno
+============================================================================= */
+
+.step-card__number {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #c4bfb8;
+}
+
+.step-card[data-done="true"] .step-card__number {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.step-card__icon {
+  font-size: 36px;
+}
+
+.step-card__title {
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.35;
+  padding: 0 10px;
+  color: #524e48;
+}
+
+.step-card[data-done="true"] .step-card__title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* =============================================================================
+   Hint
+============================================================================= */
+
+.trail-hint {
+  margin: 0;
+  padding: 0 20px 48px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #c4bfb8;
+}
