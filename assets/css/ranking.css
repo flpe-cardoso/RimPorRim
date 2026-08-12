@@ -1,0 +1,270 @@
+body.pagina-ranking {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f5efff 0%, #e7d8f8 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+.ranking-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 50px 20px;
+}
+
+.ranking-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ranking-header h1 {
+  color: #653485;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: 'Berkshire Swash', cursive, sans-serif;
+}
+
+.ranking-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Filtros de Jogo */
+.ranking-filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.btn-filtro {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: #ffffff;
+  color: #653485;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(101, 52, 133, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-filtro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(101, 52, 133, 0.2);
+  border-color: #653485;
+}
+
+.btn-filtro.active {
+  background: linear-gradient(135deg, #653485 0%, #45235c 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 15px rgba(101, 52, 133, 0.35);
+}
+
+/* Card Principal */
+.ranking-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Lista de Itens */
+.ranking-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fdfbfd;
+  border: 1px solid #f0e6fa;
+  transition: all 0.3s ease;
+}
+
+.ranking-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Posicoes do Podio */
+.ranking-item.pos-1 {
+  background: linear-gradient(135deg, #fffcf0 0%, #fff6d6 100%);
+  border: 2px solid #ffd700;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.25);
+}
+
+.ranking-item.pos-2 {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px solid #c0c0c0;
+  box-shadow: 0 6px 18px rgba(192, 192, 192, 0.25);
+}
+
+.ranking-item.pos-3 {
+  background: linear-gradient(135deg, #fff8f5 0%, #fbe7df 100%);
+  border: 2px solid #cd7f32;
+  box-shadow: 0 6px 18px rgba(205, 127, 50, 0.25);
+}
+
+/* Posicao/Medalha */
+.ranking-posicao {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #653485;
+}
+
+.medalha {
+  font-size: 1.4rem;
+}
+
+.pos-1 .ranking-posicao { color: #b8860b; }
+.pos-2 .ranking-posicao { color: #708090; }
+.pos-3 .ranking-posicao { color: #a0522d; }
+
+/* Avatar */
+.ranking-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.ranking-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #653485;
+}
+
+.pos-1 .ranking-avatar img { border-color: #ffd700; }
+.pos-2 .ranking-avatar img { border-color: #c0c0c0; }
+.pos-3 .ranking-avatar img { border-color: #cd7f32; }
+
+/* Info */
+.ranking-info {
+  flex: 1;
+}
+
+.nome-jogador {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.nome-jogo {
+  display: inline-block;
+  font-size: 0.82rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #ede4f8;
+  color: #653485;
+  font-weight: 600;
+}
+
+/* Pontos */
+.ranking-pontos {
+  text-align: right;
+}
+
+.valor-pontos {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #653485;
+}
+
+.label-pts {
+  font-size: 0.85rem;
+  color: #777;
+  margin-left: 3px;
+}
+
+.pos-1 .valor-pontos { color: #b8860b; }
+.pos-2 .valor-pontos { color: #4a5568; }
+.pos-3 .valor-pontos { color: #8c4611; }
+
+/* Estado Vazio */
+.ranking-vazio {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.icone-vazio {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.ranking-vazio p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn-jogar-agora, .btn-voltar-jogos {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #653485 0%, #45235c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(101, 52, 133, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-jogar-agora:hover, .btn-voltar-jogos:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(101, 52, 133, 0.45);
+}
+
+.ranking-footer-acao {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .ranking-container {
+    padding: 0 12px 40px 12px;
+  }
+
+  .ranking-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .ranking-item {
+    padding: 12px;
+  }
+
+  .ranking-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .nome-jogador {
+    font-size: 0.95rem;
+  }
+
+  .valor-pontos {
+    font-size: 1.1rem;
+  }
+
+  .ranking-posicao {
+    width: 45px;
+    font-size: 1rem;
+  }
+}

@@ -32,7 +32,8 @@
           <br><br>
           Explore, descubra e aprenda de um jeito leve e divertido!
         </p>
-        <a href="jogos.php" class="btn-jogar">Ir para os Jogos</a>
+        <a href="jogos.php" class="btn-jogar">Jogos Educativos</a>
+        <a href="roadmap.php" class="btn-jogar">Trilha do Aprendizado</a>
       </div>
 
       <img class="menino" src="../assets/img/Crianca.png" alt="Menino personagem">

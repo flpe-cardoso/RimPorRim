@@ -17,6 +17,34 @@ body {
   align-items: center;
   height: 100vh;
   background: linear-gradient(180deg, #dce7fb 80%, #ffffff 100%);
+  position: relative;
+}
+
+.btn-voltar {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 2px solid #033d1e;
+  border-radius: 25px;
+  color: #033d1e;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease;
+  z-index: 9999;
+}
+
+.btn-voltar:hover {
+  background-color: #033d1e;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(3, 61, 30, 0.25);
 }
 
 .navbar {
@@ -116,6 +144,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  position: relative;
 }
 
 .lado-esquerdo h2 {

@@ -7,6 +7,7 @@
 <div class="logo"><a href="../public/index.php"><img src="../assets/img/Imagem rim.png" class="img_navbar" alt="Logo"></a></div>
 <ul class="nav-links">
   <li><a href="../public/index.php">Home</a></li>
+  <li><a href="../pages/ranking.php">Ranking</a></li>
   <li><a download href="../docs/Minha Lancheira Amiga - Ebook.pdf">EBook</a></li>
   <li><a href="../pages/contato.php">Contato</a></li>
   <li><a href="../posts/forum.php">Fórum</a></li>

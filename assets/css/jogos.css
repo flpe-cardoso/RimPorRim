@@ -23,7 +23,8 @@ body.pagina-jogos {
   border-radius: 0;
 }
 
-.sidebar button {
+.sidebar button,
+.sidebar .btn-ranking {
   padding: 14px 10px;
   font-size: 16px;
   border: none;
@@ -34,12 +35,24 @@ body.pagina-jogos {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-align: center;
 }
 
-.sidebar button:hover {
+.sidebar .btn-ranking {
+  background: linear-gradient(145deg, #ffaa00, #d48800);
+  margin-top: auto;
+}
+
+.sidebar button:hover,
+.sidebar .btn-ranking:hover {
   background: linear-gradient(145deg, #ff4d4d, #990000);
   transform: translateY(-2px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar .btn-ranking:hover {
+  background: linear-gradient(145deg, #ffc107, #b87300);
 }
 
 .sidebar button.active {

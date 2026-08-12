@@ -77,7 +77,8 @@ self.C3_JsPropNameTable = [
 	{seta_direita: 0},
 	{AJAX: 0},
 	{Faltas: 0},
-	{Pontos: 0}
+	{Pontos: 0},
+	{Jogo_ID: 0}
 ];
 
 self.InstanceType = {

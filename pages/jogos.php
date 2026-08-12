@@ -23,9 +23,9 @@
       if (tipo === "jogo1") {
         html = `<iframe src="../jogos/TCC_Pou/index.html"></iframe>`;
       } else if (tipo === "jogo2") {
-        html = `<iframe src="../jogos/TCC_Receita/index.html"></iframe>`;
+        html = `<iframe src="../jogos/TCC_Memoria/index.html"></iframe>`;
       } else if (tipo === "jogo3") {
-        html = `<iframe src=""></iframe>`;
+        html = `<iframe src="../jogos/TCC_Receita/index.html"></iframe>`;
       }
 
       conteudo.innerHTML = html;
@@ -49,8 +49,9 @@
   <div class="container-geral">
     <div class="sidebar">
       <button id="btn-jogo1" onclick="mostrarJogo('jogo1')">Dino Rescue Cure</button>
-      <button id="btn-jogo2" onclick="mostrarJogo('jogo2')">Dino Recipes Cook</button>
-      <button id="btn-jogo3" onclick="mostrarJogo('jogo3')">Dino Remember Challenge</button>
+      <button id="btn-jogo2" onclick="mostrarJogo('jogo2')">Dino Remember Challenge</button>
+      <button id="btn-jogo3" onclick="mostrarJogo('jogo3')">Dino Recipes Cook</button>
+      <a href="ranking.php" class="btn-ranking">🏆 Ver Ranking</a>
     </div>
     <div class="conteudo" id="conteudo"></div>
   </div>

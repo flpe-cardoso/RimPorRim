@@ -1,5 +1,11 @@
-<!-- Verificar login -->
-<?php include("../includes/verificar_login.php"); ?>
+<?php 
+include("../includes/verificar_login.php"); 
+if (!$usuarioLogado) {
+    $_SESSION['ultima_pagina'] = $_SERVER['REQUEST_URI'];
+    header("Location: ../auth/login.html");
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,14 +44,9 @@
         <span class="trail-title__dark">Trilha do </span>
         <span class="trail-title__orange">Aprendizado</span>
       </h1>
+    
 
-      <div class="trail-flame-badge">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f97316">
-          <path
-            d="M12 23c-3.87 0-7-3.13-7-7 0-2.38 1.19-4.47 3-5.74V11c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-.48C17.69 11.7 19 13.72 19 16c0 3.87-3.13 7-7 7zM12 1C12 1 7 5.5 7 10c0 2.76 2.24 5 5 5s5-2.24 5-5C17 5.5 12 1 12 1z" />
-        </svg>
-        <span class="trail-flame-badge__count" id="flame-count">0</span>
-      </div>
+      
     </header>
 
     <!-- BARRA DE PROGRESSO -->
