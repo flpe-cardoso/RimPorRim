@@ -1,113 +1,217 @@
-    .area-jogos {
-      background: radial-gradient(circle at center, #ffeaea 0%, #ffd6d6 40%, #ffb3b3 100%);
-      min-height: 92.3vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 20px;
-    }
+/* Base da Área de Jogos */
+.area-jogos {
+  /* Fundo lúdico com a tonalidade rosa original */
+  background: radial-gradient(circle at center, #ffeaea 0%, #ffd6d6 40%, #ffb3b3 100%);
+  min-height: 92.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Nunito', sans-serif;
+}
 
-    .area-jogos .conteudo {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-      max-width: 1100px;
-      width: 100%;
-      flex-wrap: nowrap;
-      background-color: #ff7b7b;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 5px 15px rgba(255, 100, 100, 0.3);
-    }
+/* Bolhas decorativas no fundo */
+.area-jogos::before,
+.area-jogos::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
 
-    .area-jogos .texto h1 {
-      font-size: 60px;
-      font-weight: bold;
-      text-shadow: 2px 2px #990000;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+.area-jogos::before {
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.8);
+}
 
-    .area-jogos .texto p {
-      font-size: 22px;
-      line-height: 1.5;
-    }
+.area-jogos::after {
+  width: 200px;
+  height: 200px;
+  bottom: 50px;
+  right: -20px;
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.8);
+}
 
-    .area-jogos .texto strong {
-      color: #ff0000;
-    }
+/* Cartão Principal (Glassmorphism / Neumorphism style) */
+.area-jogos .conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1100px;
+  width: 100%;
+  flex-wrap: nowrap;
 
-    .area-jogos .btn-jogar {
-      display: inline-block;
-      background-color: #ff4d4d;
-      color: #fff;
-      font-size: 24px;
-      font-weight: bold;
-      padding: 16px 45px;
-      border-radius: 40px;
-      margin-top: 30px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(204, 0, 0, 0.5);
-      text-align: center;
-    }
+  /* Efeito de Vidro (Glass) branco */
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 3px solid rgba(255, 255, 255, 0.7);
 
-    .area-jogos .btn-jogar:hover {
-      background-color: #e63939;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(204, 0, 0, 0.7);
-    }
+  padding: 50px;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+  /* Para ficar acima das bolhas */
+}
 
-    .area-jogos .menino {
-      width: 400px;
-      height: auto;
-      filter: drop-shadow(0 5px 10px rgba(255, 100, 100, 0.5));
-      flex-shrink: 0;
-    }
+/* Área de Texto */
+.area-jogos .texto {
+  max-width: 550px;
+  color: #334155;
+  flex-shrink: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: left;
+}
 
-    .area-jogos .texto {
-      background-color: #ff8585;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 15px rgba(255, 150, 150, 0.5);
-      max-width: 600px;
-      font-family: 'Arial Rounded MT Bold', sans-serif;
-      color: #fff;
-      flex-shrink: 0;
-      text-align: justify;
-    }
+/* Título Mágico */
+.area-jogos .texto h1 {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 68px;
+  color: #ff4d4d;
+  text-shadow: 3px 3px 0px rgba(255, 140, 0, 0.2);
+  margin-bottom: 25px;
+  line-height: 1.1;
+  text-align: left;
+}
 
-    @media (max-width: 768px) {
-      .area-jogos {
-        min-height: 60vh;
-        padding: 40px 20px;   
-      }
+/* Parágrafos arredondados e legíveis */
+.area-jogos .texto p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 35px;
+}
 
-      .area-jogos .conteudo {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 20px;
-      }
+.area-jogos .texto strong {
+  color: #ef4444;
+  /* Vermelho vibrante para destaque */
+  font-weight: 800;
+}
 
-      .area-jogos .menino {
-        display: none;
-      }
+/* Botão Chamativo */
+.area-jogos .btn-jogar {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5253 100%);
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  padding: 16px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 20px rgba(238, 82, 83, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
 
-      .area-jogos .texto {
-        text-align: justify;
-      }
+/* Efeito de hover no botão */
+.area-jogos .btn-jogar:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(238, 82, 83, 0.5);
+  background: linear-gradient(135deg, #ff5252 0%, #ff3838 100%);
+}
 
-      .area-jogos .texto h1 {
-        font-size: 40px;
-      }
+.area-jogos .btn-jogar:active {
+  transform: translateY(2px) scale(0.98);
+}
 
-      .area-jogos .texto p {
-        font-size: 18px;
-      }
+/* Personagem com animação */
+.area-jogos .menino {
+  width: 400px;
+  height: auto;
+  filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.15));
+  flex-shrink: 0;
+  animation: float_menino 4s ease-in-out infinite;
+}
 
-      .area-jogos .btn-jogar {
-        font-size: 20px;
-        padding: 12px 35px;
-      }
-    }
+/* Animação de flutuação suave */
+@keyframes float_menino {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade (Telas menores e Celulares) */
+@media (max-width: 992px) {
+  .area-jogos .conteudo {
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .area-jogos .texto h1 {
+    font-size: 50px;
+  }
+
+  .area-jogos .menino {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .area-jogos {
+    min-height: 80vh;
+    padding: 40px 20px;
+  }
+
+  .area-jogos .conteudo {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 30px;
+  }
+
+  .area-jogos .menino {
+    width: 250px;
+    margin-bottom: -10px;
+  }
+
+  .area-jogos .texto {
+    max-width: 100%;
+    text-align: center;
+    /* Centralizar no mobile */
+  }
+
+  .area-jogos .texto h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .area-jogos .texto p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .area-jogos .btn-jogar {
+    font-size: 20px;
+    padding: 14px 40px;
+  }
+
+  .area-jogos::before,
+  .area-jogos::after {
+    display: none;
+    /* Ocultar bolhas no mobile para não poluir */
+  }
+}
